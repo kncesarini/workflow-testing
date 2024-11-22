@@ -1,22 +1,21 @@
-name: kco-sub-workflow
+name: mega-workflow
 
 on:
-  workflow_call:
-    inputs:
-      environment:
-        required: true
-        type: string
-
-
-
-
+  workflow_dispatch:
 
 jobs:
-  plan:
-    runs-on: ubuntu-24.04
-    steps:
-      - uses: actions/checkout@v4
-      - name: test
-        shell: bash
-        run: |
-          echo "${{ inputs.environment }}"
+  step1:
+    uses: ./.github/workflows/flow1.yml
+    with:
+      environment: dev
+    secrets: inherit
+  step2:
+    uses: ./.github/workflows/flow1.yml
+    with:
+      environment: test
+    secrets: inherit
+  step3:
+    uses: ./.github/workflows/flow1.yml
+    with:
+      environment: prod
+    secrets: inherit
