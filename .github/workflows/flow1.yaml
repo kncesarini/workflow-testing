@@ -8,11 +8,18 @@ on:
         type: string
         
 jobs:
-  plan:
+  build:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
       - name: test
         shell: bash
         run: |
-          echo "${{ inputs.environment }}"
+          echo "build ${{ inputs.environment }}"
+  apply:
+    runs-on: ubuntu-24.04
+    needs: build
+    steps:
+      - name: test
+        shell: bash
+        run: |
+          echo "deploy ${{ inputs.environment }}"
