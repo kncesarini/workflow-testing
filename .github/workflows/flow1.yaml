@@ -1,4 +1,4 @@
-name: kco-sub-workflow
+name: sub-workflow
 
 on:
   workflow_call:
@@ -6,11 +6,7 @@ on:
       environment:
         required: true
         type: string
-
-
-
-
-
+        
 jobs:
   plan:
     runs-on: ubuntu-24.04
