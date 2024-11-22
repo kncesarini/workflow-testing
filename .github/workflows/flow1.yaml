@@ -7,7 +7,6 @@ on:
         required: true
         type: string
       skip:
-        required: true
         default: 'false'
         type: string
         
