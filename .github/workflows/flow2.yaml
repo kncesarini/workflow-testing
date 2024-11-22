@@ -5,17 +5,17 @@ on:
 
 jobs:
   step1:
-    uses: ./.github/workflows/flow1.yml
+    uses: ./.github/workflows/flow1.yaml
     with:
       environment: dev
     secrets: inherit
   step2:
-    uses: ./.github/workflows/flow1.yml
+    uses: ./.github/workflows/flow1.yaml
     with:
       environment: test
     secrets: inherit
   step3:
-    uses: ./.github/workflows/flow1.yml
+    uses: ./.github/workflows/flow1.yaml
     with:
       environment: prod
     secrets: inherit
