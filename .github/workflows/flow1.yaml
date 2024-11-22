@@ -18,6 +18,7 @@ jobs:
   apply:
     runs-on: ubuntu-24.04
     needs: build
+    environment: ${{ inputs.environment }}
     steps:
       - name: test
         shell: bash
