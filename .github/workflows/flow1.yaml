@@ -6,6 +6,10 @@ on:
       environment:
         required: true
         type: string
+      skip:
+        required: true
+        default: 'false'
+        type: string
         
 jobs:
   build:
@@ -17,6 +21,8 @@ jobs:
           echo "build ${{ inputs.environment }}"
   apply:
     runs-on: ubuntu-24.04
+    continue-on-error: true
+    if: ${{ inputs.skip != 'true' }}
     needs: build
     environment: ${{ inputs.environment }}
     steps:
