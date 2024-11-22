@@ -1,0 +1,22 @@
+name: kco-sub-workflow
+
+on:
+  workflow_call:
+    inputs:
+      environment:
+        required: true
+        type: string
+
+
+
+
+
+jobs:
+  plan:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: test
+        shell: bash
+        run: |
+          echo "${{ inputs.environment }}"
