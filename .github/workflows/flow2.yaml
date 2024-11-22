@@ -7,15 +7,17 @@ jobs:
   step1:
     uses: ./.github/workflows/flow1.yaml
     with:
-      environment: dev
+      environment: test
     secrets: inherit
   step2:
     uses: ./.github/workflows/flow1.yaml
+    needs: step1
     with:
       environment: test
     secrets: inherit
   step3:
     uses: ./.github/workflows/flow1.yaml
+    needs: step2
     with:
       environment: test
     secrets: inherit
