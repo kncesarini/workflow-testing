@@ -8,6 +8,7 @@ jobs:
     uses: ./.github/workflows/flow1.yaml
     with:
       environment: test
+      skip: true
     secrets: inherit
   step2:
     uses: ./.github/workflows/flow1.yaml
