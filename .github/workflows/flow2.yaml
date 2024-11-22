@@ -17,5 +17,5 @@ jobs:
   step3:
     uses: ./.github/workflows/flow1.yaml
     with:
-      environment: prod
+      environment: test
     secrets: inherit
